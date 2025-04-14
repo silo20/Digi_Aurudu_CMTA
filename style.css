@@ -1,0 +1,462 @@
+/* General Styles */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #fffaf3; /* Light cream background */
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: #d35400;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #c0392b;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: #8e44ad;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Input and Button Styles */
+input[type="text"],
+input[type="tel"] {
+    padding: 12px 15px;
+    width: calc(80% - 30px);
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    vertical-align: middle;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Section Styles */
+#registerSection,
+#gameSelectionSection,
+.game-container {
+    background-color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin: 25px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    clear: both;
+}
+
+#gameSelectionSection h3 {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+#gameSelectionSection button {
+    display: block;
+    width: 85%;
+    max-width: 350px;
+    margin: 12px auto;
+    padding: 15px;
+    font-size: 1.1rem;
+    background-color: #27ae60;
+    border-radius: 10px;
+}
+#gameSelectionSection button:hover {
+    background-color: #229954;
+}
+
+/* Back Button Style */
+.back-button {
+    background-color: #e74c3c;
+    float: left;
+    margin: -10px 0px 15px -15px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+.back-button:hover {
+    background-color: #c0392b;
+}
+
+/* Leaderboard Styles */
+.leaderboard {
+    background-color: #f8f9f9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin: 25px auto 10px auto;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.leaderboard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.leaderboard li {
+    padding: 6px 0;
+    font-weight: 500;
+    color: #34495e;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+}
+.leaderboard li:last-child {
+    border-bottom: none;
+}
+
+/* Kotta Pora Specific Styles */
+.game {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.player {
+    background-color: #fdfefe;
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    box-sizing: border-box;
+}
+
+.player h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #2980b9;
+}
+
+.player p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+#winnerKP {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #16a085;
+    min-height: 25px;
+}
+
+/* Kana Mutti Specific Styles */
+.pots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    min-height: 100px;
+    flex-wrap: wrap;
+}
+
+.pot {
+    width: 75px;
+    height: 75px;
+    background-color: #a04000;
+    color: #fff5e1;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 50% 50%;
+    cursor: pointer;
+    border: 4px solid #702d00;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.pot:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: #e67e22;
+}
+
+.pot.shuffling {
+    animation: shake 0.4s ease-in-out infinite alternate;
+    border-color: #f1c40f;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-4px) rotate(-1deg); }
+    100% { transform: translateX(4px) rotate(1deg); }
+}
+
+.pot.broken {
+    cursor: default;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.pot.broken:hover {
+    transform: none;
+    border-color: #702d00;
+}
+
+.pot.correct::before, .pot.incorrect::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.pot.correct::after, .pot.incorrect::after {
+    position: absolute;
+    font-size: 28px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.pot.correct::after { content: "🌸"; }
+.pot.incorrect::after { content: "💨"; }
+
+#kmStatusMessage {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 30px;
+    color: #555;
+}
+
+#kmPlayAgainButton {
+    background-color: #2ecc71;
+    display: none;
+}
+#kmPlayAgainButton:hover { background-color: #27ae60; }
+
+
+/* Aliyata Asa Specific Styles (with Image Background) */
+.aa-board {
+    width: 90%;
+    max-width: 500px;
+    height: 300px; /* <<< ADJUST HEIGHT BASED ON IMAGE ASPECT RATIO? */
+    border: 2px solid #888;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    /* --- Set the background image --- */
+    background-image: url('input_file_0.jpeg'); /* <<< CONFIRM YOUR IMAGE FILE NAME */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+.aa-board {
+    /* ... other styles ... */
+    background-image: url('images/input_file_0.jpeg'); /* <<< Path එක වෙනස් වෙලා */
+    /* ... other styles ... */
+}
+
+.aa-moving-eye {
+    position: absolute;
+    width: 25px; /* Adjust eye size if needed */
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Adjust emoji size */
+    color: white;
+    border: 2px solid white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.15s linear, left 0.15s linear;
+    z-index: 10; /* Ensure eye is above the background */
+    pointer-events: none;
+}
+
+.aa-moving-eye.hit { background-color: rgba(39, 174, 96, 0.8); }
+.aa-moving-eye.miss { background-color: rgba(192, 57, 43, 0.8); }
+
+#aaStatusMessage {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 25px;
+    color: #2c3e50;
+}
+
+#aaPlaceEyeButton {
+    background-color: #f39c12;
+    padding: 12px 25px;
+}
+#aaPlaceEyeButton:hover { background-color: #e67e22; }
+#aaPlaceEyeButton:disabled { background-color: #bdc3c7; }
+
+#aaPlayAgainButton {
+    background-color: #2ecc71;
+    display: none;
+}
+#aaPlayAgainButton:hover { background-color: #27ae60; }
+
+
+/* Kamba Adeema Specific Styles */
+.ka-arena {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+}
+
+.ka-zone {
+    font-weight: bold;
+    padding: 0 15px;
+    color: #555;
+}
+.ka-zone-player { text-align: right; }
+.ka-zone-bot { text-align: left; }
+
+.ka-rope-container {
+    width: 60%;
+    height: 20px;
+    background-color: #c8e6c9;
+    border-left: 3px solid #f44336; /* Player win boundary (Red) */
+    border-right: 3px solid #3f51b5; /* Bot win boundary (Blue) */
+    position: relative;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.ka-center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%);
+}
+
+.ka-rope-marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffeb3b; /* Yellow marker */
+    border-radius: 50%;
+    border: 2px solid #fbc02d;
+    top: 50%;
+    left: 50%; /* Start at center */
+    transform: translate(-50%, -50%); /* Precise centering */
+    transition: left 0.15s linear; /* Smooth movement */
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#kaStatusMessage {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 25px;
+    color: #3f51b5; /* Blue status text */
+}
+
+#kaPullButton {
+    background-color: #4caf50; /* Green pull button */
+    padding: 12px 25px;
+}
+#kaPullButton:hover { background-color: #388e3c; }
+#kaPullButton:disabled { background-color: #bdc3c7; }
+
+#kaPlayAgainButton {
+    background-color: #2ecc71;
+    display: none; /* Hidden initially */
+}
+#kaPlayAgainButton:hover { background-color: #27ae60; }
+
+
+/* Hide game containers initially */
+.game-container { display: none; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .game { gap: 15px; }
+    .player { width: 180px; padding: 10px 15px; }
+    .pots-container { gap: 15px; }
+    .pot { width: 65px; height: 65px; font-size: 30px; }
+    input[type="text"], input[type="tel"], #gameSelectionSection button { width: 95%; max-width: none; }
+    .back-button { margin: -5px auto 10px auto; float: none; display: block; width: 120px; }
+    #registerSection, #gameSelectionSection, .game-container { padding: 15px; margin: 20px auto; }
+    .aa-board { height: 280px; } /* Adjust image board height */
+    .ka-rope-container { width: 50%; } /* Reduce rope width */
+    .ka-zone { padding: 0 5px; }
+    .leaderboard { width: 95%; padding: 10px 15px; }
+}
+
+/* Optional Debug Styling for Target Zone */
+/*
+#aaTargetZoneDebug {
+     position:absolute;
+     border: 1px dashed rgba(255, 0, 0, 0.7);
+     border-radius: 50%;
+     z-index: 15;
+     pointer-events: none;
+     display: none; // Keep hidden by default
+     background-color: rgba(255, 0, 0, 0.1); // Optional fill
+}
+*/
